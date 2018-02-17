@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ICGNU</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style media="screen">
+
+      body {
+
+          background-image: url(../img/vaporwave-city-skyline.png);
+
+      }
+
+    </style>
+    <body>
+
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <form class="form-inline">
+          <button class="btn btn-outline-success" type="button">Main button</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
+      </form>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-2" style="right: 117px; top: 18px;">
+             <div class="card" style="width: 18rem;">
+              <div class="card-body">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                <a class="nav-link active" href="#">Main</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Pastas</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#conf">Configurações</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Perfil</a>
+                </li>
+              </ul>
+             </div>
+           </div>
+         </div>
+
+
+    <div class="col" style="top: 17px;">
+
+
+      <div class="jumbotron">
+        <h1 class="display-4">Configurações</h1>
+        <p class="lead"></p>
+      <hr class="my-4">
+        <p></p>
+        <form method="post" action="../api/conf.php">
+          <label for="inputValidUser" >Usuario</label>
+          <input type="text" name="usuario" idclass="form-login-heading"="inputuser" class="form-control"  required >
+          <label for="inputValidUser" >Caminho</label>
+          <input type="text" name="path" idclass="form-login-heading"="inputuser" class="form-control"  required >
+          <label for="inputValidUser" >Usuarios Validos</label>
+          <input type="text" name="validU" idclass="form-login-heading"="inputuser" class="form-control"  required >
+          <label for="inputValidUser" >Comment</label>
+          <input type="text" name="comment" idclass="form-login-heading"="inputuser" class="form-control"  required >
+          <p class="lead">
+            <button class="btn btn-primary">Aplicar</button>
+          </p>
+     </form>
+      </div>
+
+    </div>
+    </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
