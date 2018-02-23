@@ -2,7 +2,7 @@
 
   Esta ferramenta permite a fácil configuração e navegação do SAMBA atravez de opções que destacam as funcionalidades da aplicação.
 
-![arquitetura](logo.png)
+![arquitetura](img/logo.png)
 
 ## Instalação
 
