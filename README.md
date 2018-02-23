@@ -1,8 +1,10 @@
 # ICGNU
 
+![arquitetura](assets/logo.png)
+
   Esta ferramenta permite a fácil configuração e navegação do SAMBA atravez de opções que destacam as funcionalidades da aplicação.
 
-![arquitetura](assets/logo.png)
+![diagrama](assets/diagrama.png)
 
 ## Instalação
 
