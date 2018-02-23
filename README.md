@@ -8,6 +8,8 @@
 
 ## Instalação
 
+  É necessário realizar a execução do Vagrantfile para levantar as     máquinas virtuais. Este arquivo esta pre-configurado para a   instalação do servidor Samba.
+
   $apt-get install samba
 
 ## Interface
@@ -22,21 +24,21 @@
 
 ## Serviços
 
-- [Compartilhar Recurso](#compartilhar-recurso)
+- [Adicionar Seção](#adicionar)
 
-- [Configuração do Samba](#configuracao)
+- [Remover Seção](#remover)
 
-- [Exibição de Diretorios](#diretorios)
+- [Exibição de Diretorios](#exibir)
 
-### Compartilhar Recurso
+### Adicionar Seção
 
-Esse serviço tem a finalidade...
+Esse serviço tem a finalidade de adicionar a seção com seus devidos parametros, afim de configurar o servidor Samba.
 
 ```
 GET /api/smb.php?action=create-share&path=:path&comment=:comment&writeable=:writeable&browseable=:browseable&validUsers=:validUsers
 ```
 
-Param
+Parametros
 
 | Name | Tipo | Descrição |
 |-|-|-|
@@ -82,6 +84,8 @@ EOF
 sudo service smbd restart
 sudo service nmbd restart
 ```
+
+### Remover Seção
 
 Para validar abra o arquivo `/etc/samba/smb.conf` e verifique se a linha foi adicionada, ou use o `smb-client` para verificar se a pasta está realmente compartilhada.
 
