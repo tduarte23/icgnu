@@ -6,7 +6,7 @@
 
 ## Instalação
 
-  $apt get samba
+  $apt-get install samba
 
 ## Interface
 
