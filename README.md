@@ -1,16 +1,28 @@
 # ICGNU
 
-...
+  Esta ferramenta permite a fácil configuração e navegação do SAMBA atravez de opções que destacam as funcionalidades da aplicação.
 
-![arquitetura](assets/arquitetura.png)
+![arquitetura](logo.png)
 
 ## Instalação
 
+  $apt get samba
+
 ## Interface
+
+<b>Pastas</b> - Nesse campo você pode navegar pelas pastas compartilhadas.
+
+<b>Configurações</b> - Área destinada apenas para administradores. Nesta opção serão configuradas os parametros das pastas compartilhadas.
+
+<b>Perfil</b> - Contem as informações do usuário atualmente logado.
 
 ## Serviços
 
 - [Compartilhar Recurso](#compartilhar-recurso)
+
+- [Configuração do Samba](#configuracao)
+
+- [Exibição de Diretorios](#diretorios)
 
 ### Compartilhar Recurso
 
@@ -25,10 +37,10 @@ Param
 | Name | Tipo | Descrição |
 |-|-|-|
 | :path | String | Caminho de recurso no formato de URL |
-| :comment | String | ... |
-| :writeable | String | ... |
-| :browseable | String | ... |
-| :users | String | ... |
+| :comment | String | Comentarios a respeito da pasta compartilhada |
+| :writeable | String | Torna a pasta editavel |
+| :browseable | String | Usuários podem navegar dentro das pastas |
+| :users | String | Informa os usuários que tem permissão para acessar as pastas |
 
 Exemplo
 
@@ -36,7 +48,7 @@ Exemplo
 /api/smb.php?action=create-share&path=/home/public&comment=pasta+pública+...&writeable=yes&browseable=yes&users=convidado
 ```
 
-Em caso de suc...
+Em caso de sucesso
 
 ```js
 {
