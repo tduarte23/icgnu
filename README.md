@@ -1,53 +1,53 @@
 # ICGNU
 
-  Esta ferramenta permite a fÃ¡cil configuraÃ§Ã£o e navegaÃ§Ã£o do SAMBA atravez de opÃ§Ãµes que destacam as funcionalidades da aplicaÃ§Ã£o.
+  Esta ferramenta permite a fácil configuração e navegação do SAMBA atravez de opções que destacam as funcionalidades da aplicação.
 
 ![arquitetura](assets/logo.png)
 
-## InstalaÃ§Ã£o
+## Instalação
 
   $apt get samba
 
 ## Interface
 
-<b>Pastas</b> - Nesse campo vocÃª pode navegar pelas pastas compartilhadas.
+**Pastas** - Nesse campo você pode navegar pelas pastas compartilhadas.
 
-<b>ConfiguraÃ§Ãµes</b> - Ãrea destinada apenas para administradores. Nesta opÃ§Ã£o serÃ£o configuradas os parametros das pastas compartilhadas.
+**Configurações** - Área destinada apenas para administradores. Nesta opção serão configuradas os parametros das pastas compartilhadas.
 
-<b>Perfil</b> - Contem as informaÃ§Ãµes do usuÃ¡rio atualmente logado.
+**Perfil** - Contem as informações do usuário atualmente logado.
 
 
 
-## ServiÃ§os
+## Serviços
 
 - [Compartilhar Recurso](#compartilhar-recurso)
 
-- [ConfiguraÃ§Ã£o do Samba](#configuracao)
+- [Configuração do Samba](#configuracao)
 
-- [ExibiÃ§Ã£o de Diretorios](#diretorios)
+- [Exibição de Diretorios](#diretorios)
 
 ### Compartilhar Recurso
 
-Esse serviÃ§o tem a finalidade...
+Esse serviço tem a finalidade...
 
 ```
-GET /api/smb.php?action=create-share&path=:path&comment=:comment&writeable=:writeable&browseable=:browseable&users=:users
+GET /api/smb.php?action=create-share&path=:path&comment=:comment&writeable=:writeable&browseable=:browseable&validUsers=:validUsers
 ```
 
 Param
 
-| Name | Tipo | DescriÃ§Ã£o |
+| Name | Tipo | Descrição |
 |-|-|-|
 | :path | String | Caminho de recurso no formato de URL |
 | :comment | String | Comentarios a respeito da pasta compartilhada |
 | :writeable | String | Torna a pasta editavel |
-| :browseable | String | UsuÃ¡rios podem navegar dentro das pastas |
-| :users | String | Informa os usuÃ¡rios que tem permissÃ£o para acessar as pastas |
+| :browseable | String | Usuários podem navegar dentro das pastas |
+| :validUsers | String | Informa os usuários que tem permissão para acessar as pastas |
 
 Exemplo
 
 ```
-/api/smb.php?action=create-share&path=/home/public&comment=pasta+pÃºblica+...&writeable=yes&browseable=yes&users=convidado
+/api/smb.php?action=create-share&path=/home/public&comment=pasta+pública+...&writeable=yes&browseable=yes&users=convidado
 ```
 
 Em caso de sucesso
@@ -58,21 +58,21 @@ Em caso de sucesso
 }
 ```
 
-Em caso de er...
+Em caso de erro
 
 ```js
 {
-  "status": "tarefa adicionada com sucesso."
+  "status": "parametros invalidos."
 }
 ```
 
-Para executar tal aÃ§Ã£o Ã© necessÃ¡rio executar o comando:
+Para executar tal ação é necessário executar o comando:
 
 ```
 $ cat <<EOF >> /etc/samba/smb.conf
 [public]
   path = /home/public
-  comment = pasta pÃºblica ...
+  comment = pasta pública ...
   writeable = yes
   browseable = yes
   valid users = convidado
@@ -81,6 +81,6 @@ sudo service smbd restart
 sudo service nmbd restart
 ```
 
-Para validar abra o arquivo `/etc/samba/smb.conf` e verifique se a linha foi adicionada, ou use o `smb-client` para verificar se a pasta estÃ¡ realmente compartilhada.
+Para validar abra o arquivo `/etc/samba/smb.conf` e verifique se a linha foi adicionada, ou use o `smb-client` para verificar se a pasta está realmente compartilhada.
 
 ###
