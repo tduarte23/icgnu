@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <style media="screen">
 
-      body{
-        background-image: url(https://www.google.com.br/search?q=darling+in+the+frankxx&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjDy_r5_rvZAhXRu1MKHR4vAoQQ_AUICigB&biw=1366&bih=637#imgrc=BTsGcmjwVsA8eM:);
-      }
-
-    </style>
     <body>
 
       <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
@@ -54,41 +48,12 @@
       <div class="jumbotron">
         <h1 class="display-4">Pastas</h1>
         <p class="lead"></p>
-      <hr class="my-4">
-      <div id="divPastas">
-
+        <hr class="my-4">
+        <div id="shares"></div>
       </div>
-
-      </div>
-
     </div>
     </div>
     </div>
-
-      <script>
-
-        const Pastas = document.querySelector('Pastas')
-
-        fetch("http://localhost:8080/json/test.json")
-        .then(function (res) { return res.json() })
-      .then(function (pcs) {
-          const Pastas = document.querySelector('#divPastas')
-
-          for (pc of pcs) {
-              if (pc) {
-                let formName =`<p>${pc.ip} </p>`
-                  //formName += ` <option>PC:${pc.nome}</option>`
-                  console.log(pc.ip)
-              }
-          }
-
-
-          Pastas.innerHTML = formName
-      })
-
-
-
-      </script>
-    </body>
-
-    </html>
+    <script src="../js/pastas.js"></script>
+  </body>
+</html>
