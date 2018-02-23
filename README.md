@@ -24,7 +24,7 @@
 
 ## Serviços
 
-- [Adicionar Seção](#adicionar)
+- [Adicionar Seção](adicionar)
 
 - [Remover Seção](#remover)
 
@@ -86,6 +86,46 @@ sudo service nmbd restart
 ```
 
 ### Remover Seção
+
+Esse serviço tem a finalidade de remover uma seção.
+
+
+Parametros
+
+| Name | Tipo | Descrição |
+|-|-|-|
+| :section | String | Nome da seção que se deseja remover |
+
+
+Exemplo
+
+```
+remSharedFolder($section);
+```
+
+Em caso de sucesso
+
+```js
+{
+  "status": "Compartilhamento removido com sucesso."
+}
+```
+
+Em caso de erro
+
+```js
+{
+  "status": "parametros invalidos."
+}
+```
+
+Para executar tal ação é necessário executar o comando:
+
+```
+$smbConfFile = preg_replace($regex, "$3", $smbConfFile);
+sudo service smbd restart
+sudo service nmbd restart
+```
 
 Para validar abra o arquivo `/etc/samba/smb.conf` e verifique se a linha foi adicionada, ou use o `smb-client` para verificar se a pasta está realmente compartilhada.
 
