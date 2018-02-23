@@ -2,7 +2,7 @@
 
   Esta ferramenta permite a fácil configuração e navegação do SAMBA atravez de opções que destacam as funcionalidades da aplicação.
 
-![arquitetura](logo.png)
+![arquitetura](assets/logo.png)
 
 ## Instalação
 
@@ -15,6 +15,8 @@
 <b>Configurações</b> - Área destinada apenas para administradores. Nesta opção serão configuradas os parametros das pastas compartilhadas.
 
 <b>Perfil</b> - Contem as informações do usuário atualmente logado.
+
+
 
 ## Serviços
 
