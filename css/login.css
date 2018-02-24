@@ -1,0 +1,26 @@
+body {
+
+background-repeat:no-repeat ;
+/*background-image: url(/img/gradient.png);*/
+background-image: url("http://www.des1gnon.com//wp-content/uploads/2014/09/Des1gnon_wallpapers_criativos_papel-de-parede1.jpg" );
+background-size: cover;
+
+}
+
+.text-muted {
+    color: #1b1e21!important;
+}
+
+.text-muted {
+  font-size: 130%;
+}
+.display-1{
+  color: #556B2F ;
+}
+.col-3 {
+  margin-left: -10% ;
+  margin-right: 1% ;
+}
+.col {
+  margin-top: 1% ;
+}

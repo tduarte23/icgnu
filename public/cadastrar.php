@@ -1,3 +1,8 @@
+<?php
+    require_once "../php/database.php";
+    session_start();
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,34 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <style media="screen">
 
-    body {
-
-    background-repeat:no-repeat ;
-    background-image: url(https://images6.alphacoders.com/792/thumb-1920-792522.png);
-    background-size: contain;
-
-    }
-
-    .card-body{
-      background-image: url(img/pink.jpg);
-    }
-
-    .text-muted {
-      font-size: 130%;
-    }
-    .display-1{
-      color: #556B2F ;
-    }
-    .col-3 {
-      margin-left: -10% ;
-      margin-right: 1% ;
-    }
-    .col {
-      margin-top: 1% ;
-    }
-    </style>
   </head>
   <body>
     <div class="container">
@@ -58,26 +36,30 @@
       </div>
 
         <div class="container">
-          <h1 style="margin-top: 2% ; margin-left: 825px ; " class="text-center"> Login </h1>
-            <div style="margin-left: 770px ;" class="row">
+          <h1 style="margin-top: 2% ; margin-left: 500px ; "> Cadastro </h1>
+            <div style="margin-left: 420px ;" class="row">
               <div class="col">
 
               <div class="card border-info mb-3" style="height: 25rem ; width: 20rem ;" >
 
                 <div class="card-body text-dark">
-              <form>
-                <div style="margin-top: 10% ;" class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-              <form>
+                  <form class="mt-2 mx-2" action="" method="POST">
+                <div class="md-form">
+                       <i class="fa fa-envelope prefix grey-text"></i>
+                       <label for="defaultForm-user">Usuario</label>
+                       <input type="text" name="usuario" id="defaultForm-user" class="form-control">
+                   </div>
+
+                   <div class="md-form">
+                       <i class="fa fa-lock prefix grey-text"></i>
+                       <label for="defaultForm-pass">Senha</label>
+                       <input type="password" name="passwd" id="defaultForm-pass" class="form-control">
+                   </div>
                 <div class="col-md-4 text-center">
-                <button type="button" class="btn btn-outline-primary btn-lg">Entrar</button>
+                  <button type="submit" style="margin-top: 28px;"class="btn btn-outline-info btn-lg" name="btn-Cadastrar">Cadastrar</button>
                 </div>
+              <form>
+
               </div>
             </div>
               </div>
@@ -91,3 +73,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
 </html>
+<?php
+        if (isset($_POST['btn-Cadastrar'])) {
+
+            $user = $_POST['usuario'];
+            $senha = $_POST['passwd'];
+
+
+
+                $sql = "SELECT * FROM users WHERE usuario = '$user'";
+                $ja_existente = false;
+
+                foreach ($conn->query($sql) as $row) {
+                    $aux = true;
+                }
+                if ($aux) {
+                    echo "usjario ja existe";
+                } else { 
+                    $sql = "INSERT INTO users (usuario, passwd) VALUES ('$user', '$senha')";
+                    $cadastrar = $conn->query($sql);
+                    if ($cadastrar) {
+                      echo "<script> window.location = \"/public/login.html\" </script>";
+                    }
+                }
+
+        }
+?>

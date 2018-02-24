@@ -15,14 +15,14 @@ Vagrant.configure(2) do |config|
     smbserver.vm.provision "shell", path: "scripts/smb-server.sh"
   end
 
-  config.vm.define "smbclient" do |smbclient|
-    smbclient.vm.hostname = "smbclient"
-    smbclient.vm.box = "ubuntu/trusty64"
-    smbclient.vm.network "private_network", ip: "192.168.1.3", virtualbox__intnet: "RedeVagrant"
-    smbclient.vm.provider "virtualbox" do |vb|
-      vb.name = "smbclient"
+  config.vm.define "sambclient" do |sambclient|
+    sambclient.vm.hostname = "sambclient"
+    sambclient.vm.box = "ubuntu/trusty64"
+    sambclient.vm.network "private_network", ip: "192.168.1.3", virtualbox__intnet: "RedeVagrant"
+    sambclient.vm.provider "virtualbox" do |vb|
+      vb.name = "sambclient"
     end
-      smbclient.vm.provision "shell", path: "scripts/smb-client.sh"
+      sambclient.vm.provision "shell", path: "scripts/smb-client.sh"
   end
 
 end
