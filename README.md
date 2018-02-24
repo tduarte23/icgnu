@@ -99,6 +99,12 @@ Para validar abra o arquivo `/etc/samba/smb.conf` e verifique se a linha foi adi
 
 ![diagrama](assets/diagrama.png)
 
+## Screenshots
+
+    ![Tela do samba client com a lista de diretorios compartilhados](assets/smbclient.png)
+
+
+
 ## Instala��o
 
   � necess�rio realizar a execu��o do Vagrantfile para levantar as     m�quinas virtuais. Este arquivo esta pre-configurado para a   instala��o do servidor Samba.
